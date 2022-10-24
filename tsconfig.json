@@ -1,21 +1,31 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
+    "baseUrl": "./src",
+    "declaration": true,
     "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
+    "outDir": "./build",
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "sourceRoot": "./build",
+    "strict": true,
+    "target": "ES5",
+    "typeRoots": ["node_modules/@types", "src/types"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/**/*.ts", "src/**/*.tsx", "scripts/*.ts"],
-  "exclude": ["node_modules", "**/deprecated"]
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "**/deprecated",
+    "src/**/*.test.tsx",
+    "src/**/*.test.ts",
+    "src/**/*.stories.tsx",
+    "src/**/stories/*.jsx"
+  ]
 }
