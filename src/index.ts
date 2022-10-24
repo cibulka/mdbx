@@ -58,6 +58,8 @@ async function getItems(glob: string, locale: string, locales: string[]) {
 
     const photo = typeof data.photo === 'string' ? await getPhoto(data.photo) : null;
 
+    console.log('DATA', data.title);
+
     const item: DbItem = {
       data,
       content,
