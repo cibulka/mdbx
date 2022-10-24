@@ -12,7 +12,13 @@ function getMainFile(filepath: string) {
 }
 
 async function getMatter(filepath: string) {
-  const str = await fsPromises.readFile(filepath, 'utf-8');
+  let str;
+  try {
+    str = await fsPromises.readFile(filepath, 'utf-8');
+  } catch (e) {
+    str = '';
+    console.error(`File does not exist: ${filepath}.`);
+  }
   const { data, content } = matter(str);
 
   let contentFormatted = content;

@@ -25,11 +25,3 @@ export function getLocalesForFilepath(filepath: string, locales: string[]) {
   const dirname = path.dirname(filepath);
   return locales.filter((locale) => fs.existsSync(getPath(dirname, `${locale}.mdx`)));
 }
-
-/*
-export function getMainFileBasename(filepath: string) {
-  const pathArr = filepath.split('/').filter(Boolean);
-  const sliceIndex = pathArr[pathArr.length - 2] === 'translations' ? 3 : 2;
-  return pathArr.splice(pathArr.length - sliceIndex, sliceIndex).join('/');
-}
-*/
