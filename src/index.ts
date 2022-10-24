@@ -101,9 +101,15 @@ async function run() {
       items = [...items, ...(await getItems(glob, locale, locales))];
     }
     const destPath = getPath(dest, `${locale}.json`);
-    await fsPromises.writeFile(destPath, JSON.stringify(items, null, 2)).then(() => {
-      console.log(`${locale}: ${items.length} files written.`);
-    });
+    console.log(`|-- Will write file to ${destPath}.`);
+    await fsPromises
+      .writeFile(destPath, JSON.stringify(items, null, 2))
+      .then(() => {
+        console.log(`${locale}: ${items.length} files written.\n\n`);
+      })
+      .catch((err) => {
+        console.error(`❌ ${err} \n\n`);
+      });
   }
 }
 
