@@ -88,7 +88,7 @@ async function run() {
   if (!globs) throw new Error('Missing posts!');
   const dest = args.dest;
   if (!dest) throw new Error('Missing dest!');
-  console.log('⌛ started mdx-db', args, locales, globs, dest);
+  console.log('⌛ started mdx-db!', args, locales, globs, dest);
 
   for (let i = 0; i < locales.length; i += 1) {
     let items: DbItem[] = [];
