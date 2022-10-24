@@ -1,8 +1,9 @@
 {
   "name": "mdx-db",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Create YAML dump from mdx files and prepare it for import on Next.js/GetStaticProps",
   "module": "build/index.js",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
