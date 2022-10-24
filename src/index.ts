@@ -88,21 +88,20 @@ async function run() {
   if (!globs) throw new Error('Missing posts!');
   const dest = args.dest;
   if (!dest) throw new Error('Missing dest!');
-  console.log('started mdx-db', args, locales, globs, dest);
+  console.log('⌛ started mdx-db', args, locales, globs, dest);
 
   for (let i = 0; i < locales.length; i += 1) {
     let items: DbItem[] = [];
     const locale = locales[i];
     for (let globI = 0; globI < globs.length; globI += 1) {
       const glob = globs[globI];
-      console.log(`doing glob ${glob}.`);
+      console.log(`|-- doing glob ${glob}.`);
       items = [...items, ...(await getItems(glob, locale, locales))];
-
-      const destPath = getPath(dest, `${locale}.json`);
-      await fsPromises.writeFile(destPath, JSON.stringify(items, null, 2)).then(() => {
-        console.log(`${locale}: ${items.length} files written.`);
-      });
     }
+    const destPath = getPath(dest, `${locale}.json`);
+    await fsPromises.writeFile(destPath, JSON.stringify(items, null, 2)).then(() => {
+      console.log(`${locale}: ${items.length} files written.`);
+    });
   }
 }
 
