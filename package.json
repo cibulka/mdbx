@@ -1,13 +1,13 @@
 {
   "name": "mdx-db",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Create YAML dump from mdx files and prepare it for import on Next.js/GetStaticProps",
   "module": "build/index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
     "dev": "tsc --watch",
-    "install": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,6 +33,10 @@
   "devDependencies": {
     "@types/minimist": "^1.2.2",
     "@types/node": "^18.11.0",
-    "prettier": "^2.7.1"
-  }
+    "prettier": "^2.7.1",
+    "typescript": "4.5.4"
+  },
+  "files": [
+    "build/**/*"
+  ]
 }
