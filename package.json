@@ -1,0 +1,34 @@
+{
+  "name": "mdx-db",
+  "version": "1.0.0",
+  "description": "Create YAML dump from mdx files and prepare it for import on Next.js/GetStaticProps",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cibulka/mdbx.git"
+  },
+  "author": "Petr Cibulka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cibulka/mdbx/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "homepage": "https://github.com/cibulka/mdbx#readme",
+  "dependencies": {
+    "dayjs": "^1.11.5",
+    "fast-glob": "^3.2.12",
+    "gray-matter": "^4.0.3",
+    "image-size": "^1.0.2",
+    "minimist": "^1.2.7"
+  },
+  "devDependencies": {
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^18.11.0",
+    "prettier": "^2.7.1"
+  }
+}
